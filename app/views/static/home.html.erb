@@ -1,0 +1,5 @@
+<h1>Static#home</h1>
+<p>Find me in app/views/static/home.html.erb</p>
+
+<%= link_to "Log In", new_user_session_path unless current_user %>
+<%= link_to "Log Out", {:action => :destroy, :controller => :sessions}, :method => :post if current_user %>
