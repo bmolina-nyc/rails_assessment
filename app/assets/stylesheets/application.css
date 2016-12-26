@@ -16,10 +16,11 @@
 
 #header {
     position: fixed;
+    margin-top: 0;
     top: 0;
     width: 100%;
-}
 
+}
 
 #footer {
     position: fixed;
@@ -27,6 +28,11 @@
     width: 100%;
 }
 #center {
-    width: 500px;
+    width: 50%;
     margin: 0 auto;
+}
+
+  #red {
+  font-weight: bold;
+  color: red
 }
