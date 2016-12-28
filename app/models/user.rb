@@ -17,5 +17,14 @@ class User < ActiveRecord::Base
     end      
   end
 
+  # current state lived in
+  def home_state 
+    State.find_by(id: current_state).name
+  end
+
+  # all states lived in - don't show current state in the history
+  def history
+    (self.states.collect { |state| state.name } - [home_state]).join(", ")
+  end
 
 end

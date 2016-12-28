@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :users do 
-    resources :states, only: [:index, :show]
+    resources :states
   end
+
+  # update a user with a new State of residence
+  post 'users/:id/states/:id/edit' => 'users#update'
 
   root 'static#home'
 

@@ -1,10 +1,17 @@
 <h4> Hello <%= current_user.email %> </h4>
 
-<h5> Home State: </h5>
-
 <h5> Current Identification: </h5>
 
+<% if !current_user.states.empty? %>
+  <h5> Home State: <%= current_user.home_state %> </h5>
+
+  <h5> Places I've Lived: </h5>
+    <h5><%= current_user.history %> </h5>
+<% end %>
+
+
 <br>
+
 <h5> What would you like to do? </h5>
 
 <%= link_to "Choose State of Residence", user_states_path(current_user) %> | <%= link_to "Register For Passport" %> | <%= link_to "Register For State ID" %> 
