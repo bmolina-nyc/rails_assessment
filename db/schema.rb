@@ -22,6 +22,9 @@ ActiveRecord::Schema.define(version: 20161226222935) do
 
   create_table "passports", force: :cascade do |t|
     t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

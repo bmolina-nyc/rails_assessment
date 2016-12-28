@@ -1,4 +1,17 @@
 <h3>Confirm Passport for <%= current_user.email %> </h3>
 
 
-<%= button_to "Get Passport" %>
+<%= form_for @passport do |f| %>
+
+  <%= f.label :first_name %>:
+  <%= f.text_field :first_name %><br />
+
+
+  <%= f.label :last_name %>:
+  <%= f.text_field :last_name %><br />
+
+  <%= f.label :state %>:
+  <%= f.collection_select :state, State.all, :id, :name %> <br>
+
+  <%= f.submit 'Obtain Passport' %> 
+<% end %>
