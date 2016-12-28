@@ -1,6 +1,9 @@
 <h4> Hello <%= current_user.email %> </h4>
 
 <h5> Current Identification: </h5>
+<% if current_user.passport %>
+  <%= "PASSPORT" %>
+<% end %>
 
 <% if !current_user.states.empty? %>
   <h5> Home State: <%= current_user.home_state %> </h5>

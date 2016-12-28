@@ -13,5 +13,8 @@
   <%= f.label :state %>:
   <%= f.collection_select :state, State.all, :id, :name %> <br>
 
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+
   <%= f.submit 'Obtain Passport' %> 
 <% end %>

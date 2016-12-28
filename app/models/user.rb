@@ -27,4 +27,9 @@ class User < ActiveRecord::Base
     (self.states.collect { |state| state.name } - [home_state]).join(", ")
   end
 
+  #validation for a passport
+  def passport_creation_valid?(params)
+    current_state.present? && params[:state].to_i == params[:user_id].to_i
+  end
+
 end
