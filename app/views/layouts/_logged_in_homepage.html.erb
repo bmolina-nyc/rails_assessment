@@ -7,12 +7,10 @@
 
   <h5> Places I've Lived: </h5>
     <h5><%= current_user.history %> </h5>
+
 <% end %>
-
-
-<br>
 
 <h5> What would you like to do? </h5>
 
-<%= link_to "Choose State of Residence", user_states_path(current_user) %> | <%= link_to "Register For Passport" %> | <%= link_to "Register For State ID" %> 
+<%= link_to "Choose State of Residence", user_states_path(current_user) %> | <%= link_to "Register For Passport", new_user_passport_path(current_user)%> | <%= link_to "Register For State ID" %> 
 

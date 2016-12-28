@@ -12,12 +12,27 @@ Rails.application.routes.draw do
     resources :states
   end
 
+   resources :users do 
+    resources :passports
+  end
+
   # update a user with a new State of residence
   post 'users/:id/states/:id/edit' => 'users#update'
 
+  # Get a passport for a user
+  post 'users/:id/passports/new' => 'passports#create'
+
+
   root 'static#home'
 
+  #logout of the application
   post "sessions/destroy" => "sessions#destroy", as: :logout
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
