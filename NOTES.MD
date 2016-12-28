@@ -40,12 +40,55 @@ You must include a nested form that writes to an associated model through a cust
 
 
 *Your forms should correctly display validation errors. Your fields should be enclosed within a fields_with_errors class and error messages describing the validation failures must be present within the view.
------*** I believe this requirement has been met via the devise gem/devise_messages partial view ***-----
+-----*** I believe this requirement has been met via the devise gem/devise_messages partial view  - may need to tweak this to include any other valiation errors - although Devise has caught many so far ***-----
 
 
 
 
 *Your application must be, within reason, a DRY (Do-Not-Repeat-Yourself) rails app. Logic present in your controllers should be encapsulated as methods in your models. Your views should use helper methods and partials to be as logic-less as possible. Follow patterns in the Rails Style Guide and the Ruby Style Guide.
+
+
+
+
+Goals/Overview -
+User Signs In - Through this site, a user will be able to sign up for valid Government docs
+User has one License
+User has one Passport
+User has one Government ID
+A License belongs to a User 
+A Passport belongs to a User
+A License is specific to one State
+
+A user can fill out the form and register for a passport - form should be validated
+A user can fill out the form and register for a liscense - form should be validated
+A user can fill out the form and register for a gov ID - form should be validated
+
+A user's page should show the docs they currently own
+
+
+A user has many state addresses (assume he can move from state to state)
+A state belongs to a user
+A user has many gov_ids
+a user has one passport through gov_ids
+a user has one state_license through gov_ids
+a user has one state_id through gov_ids
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

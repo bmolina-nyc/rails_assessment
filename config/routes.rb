@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :states
+  resources :state_ids
+  resources :licenses
+  resources :passports
   get 'static/home'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
