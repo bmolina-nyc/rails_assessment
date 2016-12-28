@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  resources :users do 
+    resources :states, only: [:index, :show]
+  end
+
   root 'static#home'
 
   post "sessions/destroy" => "sessions#destroy", as: :logout
