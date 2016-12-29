@@ -13,3 +13,14 @@ states = [{name: 'New York'}, {name: 'Connecticut'}, {name: 'New Jersey'},
   states.each do |state|
     State.create(state)
   end
+
+
+users = [{email:"bruce@test.com", password:"testtest"},
+  {email:"bruce2@test.com", password:"testtest"},
+  {email:"bruce3@test.com", password:"testtest"},
+  {email:"bruce4@test.com", password:"testtest"},
+]
+
+users.each do |user|
+  User.create(user)
+end

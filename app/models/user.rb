@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   has_one :passport
+  has_many :addresses
   has_many :states
   has_many :state_ids
   has_many :licenses, through: :state_ids

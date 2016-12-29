@@ -1,20 +1,10 @@
-<h3>Confirm Passport for <%= current_user.email %> </h3>
+<h3>Please Fill out Passport Form for <%= current_user.email %> </h3>
 
 
 <%= form_for @passport do |f| %>
 
-  <%= f.label :first_name %>:
-  <%= f.text_field :first_name %><br />
-
-
-  <%= f.label :last_name %>:
-  <%= f.text_field :last_name %><br />
-
-  <%= f.label :home_state %>:
-  <%= f.collection_select :state, State.all, :id, :name, :include_blank => true %> <br>
-
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-
+  <%= render partial: 'passports/form', locals: {:f => f} %>
 
   <%= f.submit 'Obtain Passport' %> 
+
 <% end %>
