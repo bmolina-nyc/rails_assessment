@@ -1,4 +1,4 @@
-<h3>Confirm Passport for <%= current_user.email %> </h3>
+<h3>Edit Passport for <%= current_user.email %> </h3>
 
 
 <%= form_for @passport do |f| %>
@@ -16,5 +16,5 @@
   <%= f.hidden_field :user_id, :value => current_user.id %>
 
 
-  <%= f.submit 'Obtain Passport' %> 
+  <%= f.submit 'Edit Passport' %> 
 <% end %>

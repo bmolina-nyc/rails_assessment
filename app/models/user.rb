@@ -29,7 +29,8 @@ class User < ActiveRecord::Base
 
   #validation for a passport
   def passport_creation_valid?(params)
-    current_state.present? && params[:state].to_i == params[:user_id].to_i
+    user = User.find_by(id: params[:user_id])
+    current_state.present? && params[:state].to_i == user.current_state && params[:first_name].present? && params[:last_name].present?
   end
 
 end

@@ -20,7 +20,7 @@ The join model must also store an additional user submittable attribute (not jus
 
 
 * You must include at least one class level ActiveRecord scope methods. To some extent these class scopes can be added to power a specific individual feature, such as "My Overdue Tasks" in a TODO application, scoping all tasks for the user by a datetime scope for overdue items, @user.tasks.overdue. Reports make for a good usage of class scopes, such as "Most Valuable Cart by Customer" where the code would implement a Cart.most_valuable and Cart.by_customer which could be combined as Cart.most_valuable.by_customer(@customer).
------*** This may be complete via the User #history method - revisit this later incase you're still unsure that this requirement was met ***-----
+-----*** This may be complete via the User #history method that shows all former states lived in- revisit this later incase you're still unsure that this requirement was met ***-----
 
 
 
@@ -39,7 +39,7 @@ The join model must also store an additional user submittable attribute (not jus
 
 * You must make use of a nested resource with the appropriate RESTful URLs. Additionally, your nested resource must provide a form that relates to the parent resource. Imagine an application with user profiles. You might represent a person's profile via the RESTful URL of /profiles/1, where 1 is the primary key of the profile. If the person wanted to add pictures to their profile, you could represent that as a nested resource of /profiles/1/pictures, listing all pictures belonging to profile 1. The route /profiles/1/pictures/new would allow me to upload a new picture to profile 1. Focus on making a working application first and then adding more complexity. Making a nested URL resource like '/divisions/:id/teams/new' is great. Having a complex nested resource like 'countries/:id/sports/:id/divisions/:id/teams/new' is going to make this much harder on you.
 -----*** Have included a nested route that allows for a User to add or change his state of residence ***-----
-
+-----*** Have included a nested route that allows for a User to create and edit his passport info***-----
 
 
 
@@ -47,6 +47,7 @@ The join model must also store an additional user submittable attribute (not jus
 
 *Your forms should correctly display validation errors. Your fields should be enclosed within a fields_with_errors class and error messages describing the validation failures must be present within the view.
 -----*** I believe this requirement has been met via the devise gem/devise_messages partial view  - may need to tweak this to include any other valiation errors - although Devise has caught many so far ***-----
+--------***errors are displayed when passport fields are blank or the resident state doesnt match up with the passport application form ***---------
 
 
 

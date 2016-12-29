@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   # Get a passport for a user
   post 'users/:id/passports/new' => 'passports#create'
 
+  # Edit a passport for a user
+  get 'users/:id/passports/edit' => 'passports#update'
+
 
   root 'static#home'
 

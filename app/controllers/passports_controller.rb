@@ -8,13 +8,13 @@ class PassportsController < ApplicationController
   def create
     user = current_user
 
-    if user.passport_creation_valid?(passport_params)
+    if user.passport_creation_valid?(passport_params) 
       user.passport = Passport.create(passport_params)
 
       flash[:notice] = "Passport Obtained"
       redirect_to user_path(user)
     else
-      flash[:notice] = "Cannot Create"
+      flash[:notice] = "Cannot Create - State residency must match and all fields must be filled out"
       redirect_to new_user_passport_path(user)
     end
     # need to create the users passport and add it to his data - has one passport
@@ -28,6 +28,22 @@ class PassportsController < ApplicationController
 
   end
 
+  def edit 
+    @passport = Passport.find_by(id: params[:id])
+  end
+
+  def update 
+    user = current_user
+    if user.passport_creation_valid?(passport_params)
+      user.passport.update(passport_params)
+
+      flash[:notice] = "Passport Info Updated"
+      redirect_to user_path(user)
+    else
+      flash[:notice] = "Cannot Update - State residency must match and all fields must be filled out"
+      redirect_to edit_user_passport_path(user, user.passport)
+    end
+  end
 
   private 
 
