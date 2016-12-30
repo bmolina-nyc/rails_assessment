@@ -14,15 +14,12 @@
 ActiveRecord::Schema.define(version: 20161229205054) do
 
   create_table "addresses", force: :cascade do |t|
-    t.string   "street_address_1"
-    t.string   "street_address_2"
-    t.string   "city"
+    t.string   "street_address"
     t.string   "state"
-    t.string   "zipcode"
     t.string   "address_type"
     t.integer  "profile_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "licenses", force: :cascade do |t|

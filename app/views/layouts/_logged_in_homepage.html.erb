@@ -15,5 +15,5 @@
 
 <h5> What would you like to do? </h5>
 
-<%= link_to "Choose State of Residence", user_states_path(current_user) %> | <%= current_user.passport.present? ? (link_to "Edit Passport", edit_user_passport_path( current_user,current_user.passport)) : (link_to "Register For Passport", new_user_passport_path(current_user)) %> | <%= link_to "Register For State ID" %> | <%= current_user.profile.present? ? (link_to "Edit Personal Info", edit_profile_path(current_user.profile)): (link_to "Create Personal Info", new_profile_path(current_user.profile)) %>
+<%= link_to "Choose State of Residence", user_states_path(current_user) %> | <%= current_user.passport.present? ? (link_to "Edit Passport", edit_user_passport_path( current_user,current_user.passport)) : (link_to "Register For Passport", new_user_passport_path(current_user)) %> | <%= link_to "Register For State ID" %> | <%= current_user.profile.present? ? (link_to "Edit Profile Info", edit_profile_path(current_user.profile)): (link_to "Create Profile Info", new_profile_path(current_user.profile)) %>
 

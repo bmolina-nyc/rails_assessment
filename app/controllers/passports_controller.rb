@@ -17,15 +17,6 @@ class PassportsController < ApplicationController
       flash[:notice] = "Cannot Create - State residency must match and all fields must be filled out"
       redirect_to new_user_passport_path(user)
     end
-    # need to create the users passport and add it to his data - has one passport
-    # do not want to allow a user to create a passport if he already has one
-
-    # can craete two validations here - one to ensure can't double a passport
-    #- one to ensure states match up with the collection select
-
-    # to meet the learn requirement for nested attributes - can you create a new
-    #  user here on the spot?
-
   end
 
   def edit 

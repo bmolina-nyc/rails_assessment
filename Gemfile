@@ -28,7 +28,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google'
 gem 'omniauth-github'
-
+gem 'validates_serialized', '~> 0.0.1'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
