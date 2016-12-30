@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   has_one :passport
-  has_many :addresses
+  has_one :profile
   has_many :states
   has_many :state_ids
   has_many :licenses, through: :state_ids
@@ -33,5 +33,6 @@ class User < ActiveRecord::Base
     user = User.find_by(id: params[:user_id])
     current_state.present? && params[:state].to_i == user.current_state && params[:first_name].present? && params[:last_name].present?
   end
+
 
 end

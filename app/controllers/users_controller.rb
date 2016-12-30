@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
+  
   def show
     @user = current_user
-  end
-
-  def edit
   end
 
   def update
@@ -14,4 +12,6 @@ class UsersController < ApplicationController
     user.save
     redirect_to user_path(user)
   end
+
+
 end

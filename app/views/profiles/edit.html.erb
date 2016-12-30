@@ -1,0 +1,8 @@
+<h3>Edit Profile Information for <%= current_user.email %> </h3>
+
+<%= form_for @profile do |f| %>
+
+  <%= render partial: 'profiles/form', locals: {:f => f} %>
+ 
+  <%= f.submit %>
+<% end %>

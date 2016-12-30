@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :profiles
+  resources :addresses
   resources :states
   resources :state_ids
   resources :licenses
@@ -15,6 +17,9 @@ Rails.application.routes.draw do
    resources :users do 
     resources :passports
   end
+
+  # make a users profile 
+  get 'users/:id/new' => 'users#new'
 
   # update a user with a new State of residence
   post 'users/:id/states/:id/edit' => 'users#update'

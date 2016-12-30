@@ -6,11 +6,5 @@ class Passport < ActiveRecord::Base
     first_name.present? && last_name.present?
   end
 
-  def address
-    @passport
-  end
 
-  def address_attributes=(attributes)
-
-  end
 end
