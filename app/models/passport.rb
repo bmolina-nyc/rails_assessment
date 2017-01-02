@@ -28,7 +28,7 @@ class Passport < ActiveRecord::Base
   end
 
   def params_valid?(passport_params)
-    (user.profile.name == passport_params[:full_name]) && (user.current_state == passport_params[:state].to_i)
+    (user.profile.name == passport_params[:full_name]) && (user.current_state == passport_params[:state].to_i) && (user.profile.state == user.current_state)
   end
 
 end
