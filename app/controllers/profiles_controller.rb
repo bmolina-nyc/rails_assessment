@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
   def new
     @profile = Profile.new
     @profile.addresses.build(address_type: "Home")
+    @profile.addresses.build
   end
  
   def create

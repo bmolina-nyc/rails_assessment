@@ -30,7 +30,7 @@ class PassportsController < ApplicationController
       flash[:notice] = "Passport Info Updated"
       redirect_to user_path(current_user)
     else
-      flash[:notice] = "Your Full Name and Home State must match"
+      flash[:notice] = "Your Full Name and Home State must match your Profile"
       redirect_to edit_user_passport_path(current_user, current_user.passport)
     end
   end

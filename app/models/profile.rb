@@ -15,13 +15,20 @@ class Profile < ActiveRecord::Base
   end
 
   def profile_valid?
-    name.present? && state.present? && addresses.all? { |a| a.street_address.present? && a.address_type.present? }
+    return false if !(self[:name].present? && self[:state].present?)
+    self.addresses.each do |address|
+      if address.address_type.present?
+        return false if !address.street_address.present?  
+      end
+    end
   end
 
   def params_valid?(profile_params)
-    return false unless profile_params[:name].present? && profile_params[:state].present?
+    return false if !profile_params[:name].present? || !profile_params[:state].present?
       profile_params[:addresses_attributes].each do |i, addr_attr|
-        return false if ((addr_attr[:street_address].present? && addr_attr[:address_type].present?) == false) 
+        if addr_attr[:address_type].present?
+          return false if !addr_attr[:street_address].present?  
+        end 
       end
     true 
   end
