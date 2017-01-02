@@ -1,17 +1,19 @@
   <%= f.label :name %>
-  <%= f.text_field :name %><br>
+  <%= f.text_field :name %><br><br>
+
+  <%= f.label :state %>:
+  <%= f.collection_select :state, State.all, :id, :name, :include_blank => true %> <br><br>
+
 
   <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <%= f.fields_for :addresses do |addr| %>
   
     <%= addr.label :address_label %>
-    <%= addr.text_field :address_type %><br>
+    <%= addr.text_field :address_type %><br><br>
 
-    <%= addr.label :street_address %>
-    <%= addr.text_field :street_address%><br>
-  
-    <%= addr.label :state %>
-    <%= addr.text_field :state %><br>
+    <%= addr.label :street_address %><br>
+    <%= addr.text_area :street_address%><br><br>
+
  
   <% end %>

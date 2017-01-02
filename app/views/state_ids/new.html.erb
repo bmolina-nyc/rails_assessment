@@ -1,0 +1,18 @@
+<h4> Register for a State ID </h4>
+<%= form_for @state_id do |f| %>
+
+  <%= f.label :home_state %>:
+  <%= f.collection_select :state_id, State.all, :id, :name, :include_blank => true %> 
+
+  <br><br>
+
+  <%= f.label :sign_full_name %>
+  <%= f.text_field :full_name %>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+  <br><br>
+  
+  <%= f.submit 'Get State Id' %> 
+
+<% end %>

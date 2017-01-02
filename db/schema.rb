@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20161229205054) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "street_address"
-    t.string   "state"
     t.string   "address_type"
     t.integer  "profile_id"
     t.datetime "created_at",     null: false
@@ -31,9 +30,8 @@ ActiveRecord::Schema.define(version: 20161229205054) do
 
   create_table "passports", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "state"
+    t.string   "full_name"
+    t.integer  "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,6 +39,7 @@ ActiveRecord::Schema.define(version: 20161229205054) do
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
+    t.integer  "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,6 +47,7 @@ ActiveRecord::Schema.define(version: 20161229205054) do
   create_table "state_ids", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "state_id"
+    t.string   "full_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -26,8 +26,7 @@ The join model must also store an additional user submittable attribute (not jus
 
 *You must include a nested form that writes to an associated model through a custom attribute writer. An example of this would be a New Recipe form that allowed you to add ingredients that are unique across recipes (thereby requiring a join model, or imagine being able to see all recipes that include Chicken), along with a quantity or description of the ingredient in the recipe. On this form you would have a series of fields named recipe[ingredient_attributes][0][name] and recipe[ingredient_attributes][0][description] which would write to the recipe model through a method ingredient_attributes=. This method cannot be provided via the accepts_nested_attributes_for macro because the custom writer would be responsible for finding or creating a recipe by name and then creating the row in the join model recipe_ingredients with the recipe_id, the ingredient_id, and the description from the form.
 -----*** I have a nested attributes form and a method for creating the addresses but a find or create isn't available - requirements may not be met ***-----
------*** My nested attribute form allows for the creation of a new state to the menu if a user enters a state that isnt part of the origina seeds  ***-----
-
+-----*** It allows for the creation of a new  address - but you have to overwrite whats in place - it wont save the new state but it is still allowing for it to be in place - not greatly thought out***-----
 
 
 * Your application must provide a standard user authentication, including signup, login, logout, and passwords. You can use Devise but given the complexity of that system, you should also feel free to roll your own authentication logic.
