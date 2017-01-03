@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     resources :passports
   end
 
+ 
+
   # make a users profile 
   get 'users/:id/new' => 'users#new'
 
@@ -30,6 +32,8 @@ Rails.application.routes.draw do
   # Edit a passport for a user
   get 'users/:id/passports/edit' => 'passports#update'
 
+  # Edit a state_id for a user
+  get 'users/:id/state_ids/:id/edit' => 'state_ids#update'
 
   root 'static#home'
 

@@ -34,13 +34,11 @@ class User < ActiveRecord::Base
     current_state.present? && params[:state].to_i == user.current_state && params[:first_name].present? && params[:last_name].present? 
   end
 
-  # #validation for a profile 
-  # def profile_valid?(params)
-  #   return false if params[:name].blank?
-  #     params[:addresses_attributes].each do |array|
-  #       return false if array[1].values.any? { |val| val.blank? }
-  #     end
-  #   true 
-  # end
+ # should update passport data if a state or name change has occured
+ def passport_update_required?
+  self.profile.state != self.passport.state || self.current_state != self.passport.state || self.profile.name !=  self.passport.full_name
+ end
+
+
 
 end

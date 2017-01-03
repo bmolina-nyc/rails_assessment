@@ -11,8 +11,10 @@
 
   <%= f.hidden_field :user_id, :value => current_user.id %>
 
-  <br><br>
   
   <%= f.submit 'Get State Id' %> 
 
 <% end %>
+
+<br>
+<%= link_to "Home", user_path(current_user) %>

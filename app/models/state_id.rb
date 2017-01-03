@@ -23,8 +23,8 @@ class StateId < ActiveRecord::Base
     user.profile && user.current_state ? true : false 
   end
 
-  def homestate_match  # you can't get a state ID unless you are living in that state currently
-    user.current_state == self.state_id  ? true : false 
+  def homestate_match  # you can't get a state ID unless you are living in that state currently and the profile state matches
+    (user.current_state == self.state_id && user.current_state == user.profile.state) ? true : false 
   end
 
   def name_matches

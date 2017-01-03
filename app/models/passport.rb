@@ -20,7 +20,7 @@ class Passport < ActiveRecord::Base
   end
 
   def state_matches
-    (user.current_state == self.state) ? true : false 
+    (user.current_state == self.state && user.current_state == user.profile.state) ? true : false 
   end
 
   def name_matches

@@ -8,7 +8,7 @@
 
 states = [{name: 'New York'}, {name: 'Connecticut'}, {name: 'New Jersey'}, 
   {name: 'Pennsylvania'}, {name: 'Massachusettes'},{name: 'Rhode Island'}, 
-  {name: 'Connecticut'}, {name: 'Vermont'}]
+  {name: 'Maine'}, {name: 'Vermont'}]
 
   states.each do |state|
     State.create(state)
