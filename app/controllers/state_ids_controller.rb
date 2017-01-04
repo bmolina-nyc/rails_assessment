@@ -1,5 +1,9 @@
 class StateIdsController < ApplicationController
  
+  def index
+    @sids = StateId.all
+  end
+
   def new 
     @state_id = StateId.new
   end

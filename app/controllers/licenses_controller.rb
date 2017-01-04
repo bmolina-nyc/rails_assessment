@@ -4,6 +4,10 @@ class LicensesController < ApplicationController
     @license = License.new
   end
 
+  def index
+    @licences = License.all
+  end
+
   def create
 
     user = current_user
