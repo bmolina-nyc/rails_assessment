@@ -32,9 +32,6 @@ Rails.application.routes.draw do
   # Edit a passport for a user
   get 'users/:id/passports/edit' => 'passports#update'
 
-  # Edit a state_id for a user
-  get 'users/:id/state_ids/:id/edit' => 'state_ids#update'
-
   root 'static#home'
 
   #logout of the application

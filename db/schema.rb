@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20161229205054) do
   create_table "licenses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "state_id"
+    t.string   "full_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 20161229205054) do
   create_table "state_ids", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "state_id"
+    t.integer  "license_id"
     t.string   "full_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

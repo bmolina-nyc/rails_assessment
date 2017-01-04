@@ -8,7 +8,7 @@ REQUIREMENTS OF THIS APP
 
 * Your models must include a has_many, a belongs_to, and a has_many :through relationship. You can include more models to fill out your domain, but there must be at least a model acting as a join table for the has_many through.
 The join model must also store an additional user submittable attribute (not just timestamps or auto-created fields) describing the relationship. For example, in a blog domain with comments by users, you'd have a posts table and a users table, with the comments table containing the foreign key for the post_id and the user_id along with the comment's content. In a TODO list application with shareable lists, you'd have a lists table and users table and then a user_lists table giving users access to lists via columns user_id and list_id, but you'd want to add a permission column to user_lists that described how a user relates to the list, whether they could edit it or just view it or delete it, etc.
-
+-----*** there is a state_id model - a user has many licenses through state ids and a license has many users***-----
 
 
 

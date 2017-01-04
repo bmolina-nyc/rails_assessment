@@ -3,6 +3,7 @@ class CreateStateIds < ActiveRecord::Migration
     create_table :state_ids do |t|
       t.integer :user_id
       t.integer :state_id
+      t.integer :license_id
       t.string :full_name #basically a confirm your name field
       t.timestamps null: false
     end

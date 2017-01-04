@@ -1,24 +1,23 @@
-<h4> Hello <%= current_user.email %> </h4>
+<h3> Hello <%= current_user.email %> </h3>
 
-<h5> Current Identification: </h5>
+<h3> Current Identification: </h3>
 <% if current_user.passport %>
-  <%= "PASSPORT" %> <%= "**Update Required**" if current_user.passport_update_required? %> <br>
+  <%= "* PASSPORT" %> <%= "**Update Required**" if current_user.passport_update_required? %> <br>
 <% end %>
 
 <% current_user.state_ids.each do |state_id| %>
-  <%= "#{State.find_by(id: state_id.state_id).name} id" %><br>
+  <%= "* #{State.find_by(id: state_id[:state_id]).name} License" %><br>
 <% end %>
 
 
 <% if !current_user.states.empty? %>
-  <h5> Home State: <%= current_user.home_state %> </h5>
+  <h3> Home State: <%= current_user.home_state %> </h3>
 
-  <h5> Places I've Lived: </h5>
-    <h5><%= current_user.history %> </h5>
+  <h3> Places I've Lived: <%= current_user.history %> </h3>
 
 <% end %>
 
-<h5> What would you like to do? </h5>
+<h3> What would you like to do? </h3>
 
-<%= link_to "Choose State of Residence", user_states_path(current_user) %> | <%= current_user.passport.present? ? (link_to "Edit Passport", edit_user_passport_path( current_user,current_user.passport)) : (link_to "Register For Passport", new_user_passport_path(current_user)) %> | <%= link_to "Register For State ID", new_state_id_path %> | <%= current_user.profile.present? ? (link_to "Edit Profile Info", edit_profile_path(current_user.profile)): (link_to "Create Profile Info", new_profile_path(current_user.profile)) %>
+<%= link_to "Choose State of Residence", user_states_path(current_user) %> | <%= current_user.passport.present? ? (link_to "Edit Passport", edit_user_passport_path( current_user,current_user.passport)) : (link_to "Register For Passport", new_user_passport_path(current_user)) %> | <%= link_to "Register For License", new_license_path %> | <%= current_user.profile.present? ? (link_to "Edit Profile Info", edit_profile_path(current_user.profile)): (link_to "Create Profile Info", new_profile_path(current_user.profile)) %>
 
